@@ -1,11 +1,12 @@
-# PPT Master Dependencies / PPT Master 依赖
+﻿# PPT Master Dependencies / PPT Master 渚濊禆
 # =============================================
 #
 # Full list lives inside the skill so installing the skill alone gives full capability.
-# 完整依赖列表已内置于 skill 内部，单独安装 skill 即可获得完整能力。
+# 瀹屾暣渚濊禆鍒楄〃宸插唴缃簬 skill 鍐呴儴锛屽崟鐙畨瑁?skill 鍗冲彲鑾峰緱瀹屾暣鑳藉姏銆?
 #
-# Install / 安装方式：
-#   pip install -r requirements.txt                     # from repo root / 仓库根目录
-#   pip install -r skills/ppt-master/requirements.txt   # from anywhere / 任意位置
+# Install / 瀹夎鏂瑰紡锛?
+#   pip install -r requirements.txt                     # from repo root / 浠撳簱鏍圭洰褰?
+#   pip install -r skills/ppt-master/requirements.txt   # from anywhere / 浠绘剰浣嶇疆
 #
 -r skills/ppt-master/requirements.txt
+

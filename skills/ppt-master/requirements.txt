@@ -1,112 +1,113 @@
-# PPT Master Dependencies / PPT Master 依赖
+﻿# PPT Master Dependencies / PPT Master 渚濊禆
 # =============================================
 #
 # Most tools use only the Python standard library. Below are optional dependencies.
-# 大部分工具仅使用 Python 标准库，以下为可选依赖。
+# 澶ч儴鍒嗗伐鍏蜂粎浣跨敤 Python 鏍囧噯搴擄紝浠ヤ笅涓哄彲閫変緷璧栥€?
 #
-# Install / 安装方式：
+# Install / 瀹夎鏂瑰紡锛?
 #   pip install -r requirements.txt
 
-# ─────────────────────────────────────────────────────────────
-# SVG to PPTX tool / SVG 转 PPTX 工具 (skills/ppt-master/scripts/svg_to_pptx.py)
-# ─────────────────────────────────────────────────────────────
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# SVG to PPTX tool / SVG 杞?PPTX 宸ュ叿 (skills/ppt-master/scripts/svg_to_pptx.py)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 # Batch-convert SVG files to PowerPoint presentations.
-# 用于将 SVG 文件批量转换为 PowerPoint 演示文稿
+# 鐢ㄤ簬灏?SVG 鏂囦欢鎵归噺杞崲涓?PowerPoint 婕旂ず鏂囩
 # Uses Office-compatible mode (PNG + SVG dual format) by default, supports all Office versions.
-# 默认使用 Office 兼容模式（PNG + SVG 双格式），支持所有 Office 版本
+# 榛樿浣跨敤 Office 鍏煎妯″紡锛圥NG + SVG 鍙屾牸寮忥級锛屾敮鎸佹墍鏈?Office 鐗堟湰
 python-pptx>=0.6.21
 XlsxWriter>=3.0.0
 
-# Recorded narration / 录制计时和旁白
+# Recorded narration / 褰曞埗璁℃椂鍜屾梺鐧?
 # notes_to_audio.py generates per-slide narration audio on macOS/Linux/Windows.
-# notes_to_audio.py 用于在 macOS/Linux/Windows 上生成逐页旁白音频。
+# notes_to_audio.py 鐢ㄤ簬鍦?macOS/Linux/Windows 涓婄敓鎴愰€愰〉鏃佺櫧闊抽銆?
 edge-tts>=7.2.8
 
 # Office compatibility dependencies (choose one, CairoSVG preferred)
-# Office 兼容模式依赖（二选一，优先使用 cairosvg）
+# Office 鍏煎妯″紡渚濊禆锛堜簩閫変竴锛屼紭鍏堜娇鐢?cairosvg锛?
 # Converts SVG to PNG fallback images for Office LTSC 2021 etc.
-# 用于将 SVG 转换为 PNG 后备图片，确保 Office LTSC 2021 等版本正常显示
+# 鐢ㄤ簬灏?SVG 杞崲涓?PNG 鍚庡鍥剧墖锛岀‘淇?Office LTSC 2021 绛夌増鏈甯告樉绀?
 #
-# Option A / 方案 A: CairoSVG (recommended / 推荐, ~25MB, full gradient/filter support)
+# Option A / 鏂规 A: CairoSVG (recommended / 鎺ㄨ崘, ~25MB, full gradient/filter support)
 #   pip install cairosvg
 #   macOS: brew install cairo
 #
-# Option B / 方案 B: svglib (lightweight / 轻量, ~5MB, some gradients may be lost)
+# Option B / 鏂规 B: svglib (lightweight / 杞婚噺, ~5MB, some gradients may be lost)
 svglib>=1.5.0
 reportlab>=4.0.0
 
-# ─────────────────────────────────────────────────────────────
-# PDF to Markdown tool / PDF 转 Markdown 工具 (skills/ppt-master/scripts/source_to_md/pdf_to_md.py)
-# ─────────────────────────────────────────────────────────────
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# PDF to Markdown tool / PDF 杞?Markdown 宸ュ叿 (skills/ppt-master/scripts/source_to_md/pdf_to_md.py)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 # Converts PDF to Markdown with text, image, and table extraction.
-# 用于将 PDF 文件转换为 Markdown 格式，支持文本、图片、表格提取
+# 鐢ㄤ簬灏?PDF 鏂囦欢杞崲涓?Markdown 鏍煎紡锛屾敮鎸佹枃鏈€佸浘鐗囥€佽〃鏍兼彁鍙?
 PyMuPDF>=1.23.0
 
-# ─────────────────────────────────────────────────────────────
-# Document to Markdown tool / 文档转 Markdown 工具 (skills/ppt-master/scripts/source_to_md/doc_to_md.py)
-# ─────────────────────────────────────────────────────────────
-# Native (pure-Python) paths — no external binary required:
-# 原生路径（纯 Python，无需外部程序）：
-#   .docx   → mammoth
-#   .html   → markdownify (+ beautifulsoup4, listed below)
-#   .epub   → ebooklib (+ markdownify)
-#   .ipynb  → nbconvert
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# Document to Markdown tool / 鏂囨。杞?Markdown 宸ュ叿 (skills/ppt-master/scripts/source_to_md/doc_to_md.py)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# Native (pure-Python) paths 鈥?no external binary required:
+# 鍘熺敓璺緞锛堢函 Python锛屾棤闇€澶栭儴绋嬪簭锛夛細
+#   .docx   鈫?mammoth
+#   .html   鈫?markdownify (+ beautifulsoup4, listed below)
+#   .epub   鈫?ebooklib (+ markdownify)
+#   .ipynb  鈫?nbconvert
 mammoth>=1.6.0
 markdownify>=0.11.6
 ebooklib>=0.18
 nbconvert>=7.0.0
 
-# ─────────────────────────────────────────────────────────────
-# Excel to Markdown tool / Excel 转 Markdown 工具 (skills/ppt-master/scripts/source_to_md/excel_to_md.py)
-# ─────────────────────────────────────────────────────────────
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# Excel to Markdown tool / Excel 杞?Markdown 宸ュ叿 (skills/ppt-master/scripts/source_to_md/excel_to_md.py)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 # Converts .xlsx/.xlsm workbooks to Markdown while preserving sheet structure.
-# 用于将 .xlsx/.xlsm 工作簿转换为 Markdown，并保留工作表结构。
+# 鐢ㄤ簬灏?.xlsx/.xlsm 宸ヤ綔绨胯浆鎹负 Markdown锛屽苟淇濈暀宸ヤ綔琛ㄧ粨鏋勩€?
 openpyxl>=3.1.0
 #
-# Fallback path — only needed for less common formats
+# Fallback path 鈥?only needed for less common formats
 # (.doc .odt .rtf .tex/.latex .rst .org .typ).
 # Not required if you only convert the four native formats above.
-# 备用路径 —— 仅在需要处理以下小众格式时才用到
-# (.doc .odt .rtf .tex/.latex .rst .org .typ)。
-# 如果只处理上述四种原生格式，无需安装。
+# 澶囩敤璺緞 鈥斺€?浠呭湪闇€瑕佸鐞嗕互涓嬪皬浼楁牸寮忔椂鎵嶇敤鍒?
+# (.doc .odt .rtf .tex/.latex .rst .org .typ)銆?
+# 濡傛灉鍙鐞嗕笂杩板洓绉嶅師鐢熸牸寮忥紝鏃犻渶瀹夎銆?
 #   macOS:   brew install pandoc
 #   Ubuntu:  sudo apt install pandoc
 #   Windows: https://pandoc.org/installing.html
 
-# ─────────────────────────────────────────────────────────────
-# Image processing tools / 图片处理工具
-# ─────────────────────────────────────────────────────────────
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# Image processing tools / 鍥剧墖澶勭悊宸ュ叿
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 # fix_image_aspect.py - Fix image aspect ratio (prevent stretching during PPT shape conversion)
-# fix_image_aspect.py - 修复图片宽高比（防止 PPT 转形状时拉伸）
+# fix_image_aspect.py - 淇鍥剧墖瀹介珮姣旓紙闃叉 PPT 杞舰鐘舵椂鎷変几锛?
 # gemini_watermark_remover.py - Remove watermarks from Gemini-generated images
-# gemini_watermark_remover.py - 去除 Gemini 生成图片的水印
+# gemini_watermark_remover.py - 鍘婚櫎 Gemini 鐢熸垚鍥剧墖鐨勬按鍗?
 Pillow>=9.0.0
 numpy>=1.20.0
 
-# ─────────────────────────────────────────────────────────────
-# Web to Markdown tool / 网页转 Markdown 工具 (skills/ppt-master/scripts/source_to_md/web_to_md.py)
-# ─────────────────────────────────────────────────────────────
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# Web to Markdown tool / 缃戦〉杞?Markdown 宸ュ叿 (skills/ppt-master/scripts/source_to_md/web_to_md.py)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 requests>=2.31.0
 beautifulsoup4>=4.12.0
-# Optional — TLS fingerprint impersonation for sites that block Python's
+# Optional 鈥?TLS fingerprint impersonation for sites that block Python's
 # default TLS fingerprint (e.g., WeChat mp.weixin.qq.com). If installed,
 # web_to_md.py uses it automatically; otherwise falls back to requests.
 # Install this to avoid needing Node.js for WeChat / portal pages.
-# 可选 —— 用于绕过 TLS 指纹屏蔽（例如微信公众号等）。装了之后 web_to_md.py
-# 会自动启用；不装则回退到 requests。装了它就不必再装 Node.js。
+# 鍙€?鈥斺€?鐢ㄤ簬缁曡繃 TLS 鎸囩汗灞忚斀锛堜緥濡傚井淇″叕浼楀彿绛夛級銆傝浜嗕箣鍚?web_to_md.py
+# 浼氳嚜鍔ㄥ惎鐢紱涓嶈鍒欏洖閫€鍒?requests銆傝浜嗗畠灏变笉蹇呭啀瑁?Node.js銆?
 curl_cffi>=0.7.0
 
-# ─────────────────────────────────────────────────────────────
-# AI image generation tool / AI 图片生成工具 (skills/ppt-master/scripts/image_gen.py)
-# ─────────────────────────────────────────────────────────────
-# Gemini backend / Gemini 后端 (IMAGE_BACKEND=gemini)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# AI image generation tool / AI 鍥剧墖鐢熸垚宸ュ叿 (skills/ppt-master/scripts/image_gen.py)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# Gemini backend / Gemini 鍚庣 (IMAGE_BACKEND=gemini)
 google-genai>=1.0.0
 # OpenAI-compatible backend uses requests from the web tooling section above.
-# OpenAI 兼容后端复用上方网页工具所需的 requests。
+# OpenAI 鍏煎鍚庣澶嶇敤涓婃柟缃戦〉宸ュ叿鎵€闇€鐨?requests銆?
 
-# ─────────────────────────────────────────────────────────────
-# SVG Editor / SVG 编辑器 (skills/ppt-master/scripts/svg_editor/server.py)
-# ─────────────────────────────────────────────────────────────
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+# SVG Editor / SVG 缂栬緫鍣?(skills/ppt-master/scripts/svg_editor/server.py)
+# 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 # Localhost web editor for annotating SVG elements with edit instructions.
-# 本地 Web 编辑器，用于在 SVG 元素上添加编辑标注指令
+# 鏈湴 Web 缂栬緫鍣紝鐢ㄤ簬鍦?SVG 鍏冪礌涓婃坊鍔犵紪杈戞爣娉ㄦ寚浠?
 flask>=3.0.0
+
